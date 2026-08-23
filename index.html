@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barba Negra — Barbearia | Joinville - SC</title>
+<meta name="description" content="Barbearia Barba Negra em Joinville - SC. Cortes, barba e sobrancelha com mais de 3 anos de experiência. Agende pelo WhatsApp (47) 91768-8615.">
+<meta property="og:title" content="Barba Negra — Barbearia">
+<meta property="og:description" content="Estilo e tradição em cada corte. Agende seu horário pelo WhatsApp.">
+<meta property="og:image" content="logo%20realista.png">
+<meta name="theme-color" content="#0c0a08">
+<link rel="icon" type="image/png" href="logo%20realista.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --bg:#0c0a08;
+  --bg-2:#100d0a;
+  --surface:#181310;
+  --gold:#c9a24b;
+  --gold-light:#e6c87e;
+  --text:#f3ede1;
+  --muted:#a89f8d;
+  --border:rgba(201,162,75,.22);
+  --radius:18px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{font-family:inherit}
+::selection{background:var(--gold);color:#171204}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#2b2318;border-radius:99px}
+.container{width:min(1180px,92%);margin-inline:auto}
+.section{padding:96px 0}
+
+/* ---------- HEADER ---------- */
+.header{position:fixed;top:0;left:0;right:0;z-index:100;padding-block:16px;transition:.35s ease}
+.header.scrolled{background:rgba(12,10,8,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding-block:10px;border-bottom:1px solid var(--border)}
+.header__inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:48px;height:48px;object-fit:cover;border-radius:50%;border:2px solid var(--gold);box-shadow:0 0 22px rgba(201,162,75,.3)}
+.brand__name{font-family:'Cinzel',serif;font-weight:700;font-size:1.1rem;letter-spacing:.14em}
+.brand__name span{color:var(--gold)}
+.nav ul{display:flex;gap:30px}
+.nav a{font-size:.83rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);position:relative;padding-block:6px;transition:color .3s}
+.nav a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--gold);transition:width .3s}
+.nav a:hover,.nav a.active{color:var(--text)}
+.nav a:hover::after,.nav a.active::after{width:100%}
+.header__actions{display:flex;align-items:center;gap:14px}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;z-index:102}
+.hamburger span{width:26px;height:2px;background:var(--text);transition:.3s;border-radius:2px}
+.hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ---------- BUTTONS ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:600;font-size:.95rem;padding:14px 28px;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:.3s;white-space:nowrap}
+.btn--gold{background:linear-gradient(135deg,#dcb662,#b3872e);color:#1a1305;box-shadow:0 8px 26px rgba(201,162,75,.25)}
+.btn--gold:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(201,162,75,.4)}
+.btn--outline{border-color:var(--border);color:var(--text);background:rgba(255,255,255,.02)}
+.btn--outline:hover{border-color:var(--gold);color:var(--gold-light);transform:translateY(-2px)}
+.btn--sm{padding:10px 20px;font-size:.85rem}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:150px 0 110px;overflow:hidden}
+.hero__bg,.hero__overlay{position:absolute;inset:0}
+.hero__bg img{width:100%;height:100%;object-fit:cover}
+.hero__overlay{background:linear-gradient(90deg,rgba(10,8,5,.97) 0%,rgba(10,8,5,.86) 42%,rgba(10,8,5,.55) 100%)}
+.hero__inner{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.hero__logo{width:88px;height:88px;object-fit:cover;border-radius:50%;border:2px solid var(--gold);box-shadow:0 0 44px rgba(201,162,75,.4);margin-bottom:26px}
+.hero__eyebrow{color:var(--gold);letter-spacing:.34em;text-transform:uppercase;font-size:.78rem;font-weight:600;margin-bottom:12px}
+.hero h1{font-family:'Cinzel',serif;font-weight:800;font-size:clamp(2.7rem,6vw,4.5rem);line-height:1.06;letter-spacing:.05em}
+.hero h1 span{color:var(--gold)}
+.hero__tagline{color:var(--muted);max-width:52ch;margin-top:18px;font-size:1.02rem}
+.hero__actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:36px}
+.hero__facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.hero__facts li{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--border);background:rgba(255,255,255,.03);border-radius:999px;padding:8px 16px;font-size:.82rem;color:var(--muted)}
+.hero__facts i{color:var(--gold)}
+.hero__photo{justify-self:center;position:relative;padding-bottom:26px}
+.frame{position:relative;width:min(400px,78vw);aspect-ratio:4/5;border-radius:230px 230px 20px 20px;padding:14px;border:1px solid var(--border);background:linear-gradient(165deg,rgba(201,162,75,.2),rgba(201,162,75,.04));box-shadow:0 30px 80px rgba(0,0,0,.55)}
+.frame img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:218px 218px 12px 12px}
+.float-badge{position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#151009;border:1px solid var(--gold);color:var(--gold-light);padding:12px 24px;border-radius:999px;font-size:.86rem;font-weight:600;box-shadow:0 18px 44px rgba(0,0,0,.6)}
+.float-badge i{color:var(--gold);margin-right:8px}
+.hero__scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2}
+.hero__scroll i{animation:bounce 1.8s infinite;color:var(--gold)}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+
+/* ---------- MARQUEE ---------- */
+.marquee{overflow:hidden;border-block:1px solid var(--border);background:#0a0806;padding-block:16px}
+.marquee__track{display:flex;gap:56px;width:max-content;animation:marquee 26s linear infinite}
+.marquee__track span{font-family:'Cinzel',serif;letter-spacing:.3em;font-size:.85rem;color:var(--muted);display:inline-flex;align-items:center;gap:56px;white-space:nowrap}
+.marquee__track span::after{content:"✦";color:var(--gold);letter-spacing:0}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ---------- SECTION HEADERS ---------- */
+.sec-head{max-width:660px;margin:0 auto 58px;text-align:center}
+.sec-head--left{margin:0 0 40px;text-align:left}
+.tag{display:inline-flex;align-items:center;gap:12px;color:var(--gold);letter-spacing:.3em;text-transform:uppercase;font-size:.74rem;font-weight:600;margin-bottom:16px}
+.tag::before{content:"";width:36px;height:1px;background:var(--gold)}
+.sec-head:not(.sec-head--left) .tag::after{content:"";width:36px;height:1px;background:var(--gold)}
+.sec-head h2{font-family:'Cinzel',serif;font-weight:700;font-size:clamp(1.85rem,3.6vw,2.6rem);line-height:1.18;letter-spacing:.04em}
+.sec-head h2 span{color:var(--gold)}
+.sec-head p{color:var(--muted);margin-top:14px}
+
+/* ---------- SERVICES ---------- */
+.services{background:linear-gradient(180deg,var(--bg) 0%,#0f0c09 100%)}
+.banner{position:relative;border-radius:22px;overflow:hidden;margin-bottom:64px;border:1px solid var(--border)}
+.banner img{width:100%;height:min(360px,42vw);object-fit:cover}
+.banner__content{position:absolute;inset:0;display:grid;place-content:center;text-align:center;gap:10px;padding:24px;background:linear-gradient(180deg,rgba(10,8,5,.5),rgba(10,8,5,.78))}
+.banner__content h3{font-family:'Cinzel',serif;font-size:clamp(1.4rem,3vw,2.1rem);letter-spacing:.06em}
+.banner__content p{color:var(--gold-light);letter-spacing:.24em;text-transform:uppercase;font-size:.76rem;font-weight:600}
+.services__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:26px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}
+.card:hover{transform:translateY(-8px);border-color:rgba(201,162,75,.6);box-shadow:0 26px 54px rgba(0,0,0,.5)}
+.card__img{aspect-ratio:16/11;overflow:hidden}
+.card__img img{width:100%;height:100%;object-fit:cover;transition:transform .65s ease}
+.card:hover .card__img img{transform:scale(1.07)}
+.card__body{padding:24px}
+.card__body h3{font-family:'Cinzel',serif;font-size:1.22rem;letter-spacing:.04em;margin-bottom:10px}
+.card__body p{color:var(--muted);font-size:.93rem}
+.card__foot{margin-top:20px;padding-top:16px;border-top:1px solid rgba(201,162,75,.16);display:flex;align-items:center;justify-content:space-between}
+.price{font-family:'Cinzel',serif;font-weight:700;font-size:1.35rem;color:var(--gold)}
+.price small{display:block;font-family:'Inter',sans-serif;font-size:.66rem;font-weight:600;letter-spacing:.24em;color:var(--muted);text-transform:uppercase}
+.card__foot i{color:rgba(201,162,75,.45);font-size:1.05rem}
+
+/* ---------- PROFESSIONAL ---------- */
+.pro{background:#0f0c09;border-block:1px solid var(--border)}
+.pro__grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}
+.pro__photo{position:relative;justify-self:center;padding:0 0 30px 30px}
+.pro__photo::before{content:"";position:absolute;inset:30px auto auto 0;width:100%;height:100%;border:1px solid var(--border);border-radius:230px 230px 20px 20px;z-index:0}
+.pro__photo .frame{position:relative;z-index:1;width:min(380px,74vw)}
+.creds{margin-top:34px;display:flex;flex-direction:column}
+.cred{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px dashed rgba(201,162,75,.22)}
+.creds .cred:last-child{border-bottom:0}
+.cred i{flex:0 0 46px;width:46px;height:46px;display:grid;place-items:center;border:1px solid var(--border);border-radius:14px;color:var(--gold);background:rgba(201,162,75,.07);font-size:1.05rem}
+.cred b{display:block;font-weight:600;font-size:.98rem}
+.cred small{color:var(--muted);font-size:.85rem}
+.pro__actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+
+/* ---------- GALLERY ---------- */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:235px;gap:18px}
+.gallery__item{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--border)}
+.gallery__item:first-child{grid-column:span 2;grid-row:span 2}
+.gallery__item:nth-child(2){grid-column:span 2;grid-row:span 2}
+.gallery__item img{width:100%;height:100%;object-fit:cover;transition:transform .65s ease}
+.gallery__item:hover img{transform:scale(1.06)}
+.gallery__caption{position:absolute;inset:auto 0 0 0;padding:38px 20px 16px;background:linear-gradient(180deg,transparent,rgba(8,6,4,.88));font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light);opacity:0;transform:translateY(8px);transition:.4s}
+.gallery__item:hover .gallery__caption{opacity:1;transform:none}
+.gallery__logo{object-fit:contain!important;padding:48px;background:#0c0a08}
+
+/* ---------- LOCATION ---------- */
+.location{position:relative;padding:120px 0;overflow:hidden}
+.location__bg,.location__overlay{position:absolute;inset:0}
+.location__bg img{width:100%;height:100%;object-fit:cover}
+.location__overlay{background:rgba(9,7,5,.9)}
+.location .container{position:relative;z-index:2}
+.loc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px}
+.loc-card{background:rgba(18,14,10,.85);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:border-color .3s,transform .3s}
+.loc-card:hover{border-color:rgba(201,162,75,.55);transform:translateY(-4px)}
+.loc-card__icon{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;border:1px solid var(--border);color:var(--gold);background:rgba(201,162,75,.08);font-size:1.15rem;margin-bottom:20px}
+.loc-card h3{font-family:'Cinzel',serif;font-size:1.15rem;letter-spacing:.05em;margin-bottom:10px}
+.loc-card p{color:var(--muted);font-size:.94rem}
+.addr-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:.83rem;font-weight:500;padding:10px 18px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.03);color:var(--text);cursor:pointer;transition:.3s}
+.chip:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(201,162,75,.08)}
+.chip.copied{border-color:#3ddc84;color:#3ddc84}
+.loc-card .chip-link{margin-top:22px}
+
+/* ---------- CONTACT ---------- */
+.contact{background:#0f0c09;border-top:1px solid var(--border)}
+.contact__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:24px;max-width:820px;margin:0 auto}
+.contact-card{display:flex;align-items:center;gap:18px;padding:28px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);transition:.3s}
+.contact-card:hover{transform:translateY(-4px);border-color:rgba(201,162,75,.6)}
+.contact-card i{flex:0 0 54px;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:1.35rem}
+.contact-card--wa i{background:rgba(37,211,102,.12);color:#25d366;border:1px solid rgba(37,211,102,.35)}
+.contact-card--ig i{background:rgba(228,64,95,.12);color:#e4405f;border:1px solid rgba(228,64,95,.35)}
+.contact-card h4{font-family:'Cinzel',serif;font-size:1.02rem;letter-spacing:.05em}
+.contact-card p{color:var(--muted);font-size:.9rem;margin-block:2px 6px}
+.contact-card span{font-size:.82rem;color:var(--gold);font-weight:600;letter-spacing:.04em}
+
+/* ---------- CTA ---------- */
+.cta{padding:92px 0;text-align:center;border-block:1px solid var(--border);background:linear-gradient(135deg,#181206 0%,#0d0a06 100%);position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:560px;height:240px;background:radial-gradient(closest-side,rgba(201,162,75,.16),transparent);pointer-events:none}
+.cta h2{font-family:'Cinzel',serif;font-size:clamp(1.7rem,3.4vw,2.4rem);letter-spacing:.04em}
+.cta h2 span{color:var(--gold)}
+.cta p{color:var(--muted);margin:14px 0 34px}
+.cta__actions{display:flex;justify-content:center;flex-wrap:wrap;gap:16px}
+
+/* ---------- FOOTER ---------- */
+.footer{position:relative;padding:90px 0 0;overflow:hidden;background:var(--bg)}
+.footer__bg,.footer__overlay{position:absolute;inset:0}
+.footer__bg img{width:100%;height:100%;object-fit:cover;opacity:.16}
+.footer__overlay{background:linear-gradient(180deg,var(--bg) 0%,rgba(12,10,8,.55) 100%)}
+.footer__inner{position:relative;z-index:2;display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:46px;padding-bottom:64px}
+.footer__brand img{width:68px;height:68px;object-fit:cover;border-radius:50%;border:2px solid var(--gold);margin-bottom:18px}
+.footer__slogan{color:var(--muted);font-size:.94rem;max-width:30ch}
+.soc{display:flex;gap:12px;margin-top:22px}
+.soc a{width:42px;height:42px;border-radius:50%;border:1px solid var(--border);display:grid;place-items:center;color:var(--muted);transition:.3s}
+.soc a:hover{border-color:var(--gold);color:var(--gold-light);transform:translateY(-3px)}
+.footer h4{font-family:'Cinzel',serif;font-size:.86rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.footer li{margin-bottom:11px}
+.footer li a,.footer li{color:var(--muted);font-size:.92rem;transition:color .3s}
+.footer li a:hover{color:var(--gold-light)}
+.footer__bottom{position:relative;z-index:2;border-top:1px solid var(--border);padding-block:22px}
+.footer__bottom .container{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.footer__bottom p{font-size:.83rem;color:var(--muted)}
+.footer__bottom strong{color:var(--text)}
+
+/* ---------- FLOATS ---------- */
+.wa-float{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:#22c15e;color:#fff;display:grid;place-items:center;font-size:1.55rem;box-shadow:0 14px 34px rgba(34,193,94,.42);z-index:90;transition:.3s}
+.wa-float:hover{transform:scale(1.09)}
+.to-top{position:fixed;right:31px;bottom:96px;width:42px;height:42px;border-radius:50%;background:var(--surface);border:1px solid var(--border);color:var(--gold);display:grid;place-items:center;z-index:90;opacity:0;visibility:hidden;transition:.3s;font-size:.85rem}
+.to-top.show{opacity:1;visibility:visible}
+.to-top:hover{border-color:var(--gold)}
+
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:none}
+.reveal[data-delay="1"]{transition-delay:.1s}
+.reveal[data-delay="2"]{transition-delay:.2s}
+.reveal[data-delay="3"]{transition-delay:.3s}
+.reveal[data-delay="4"]{transition-delay:.4s}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:1024px){
+  .hero__inner{gap:44px}
+  .pro__grid{gap:48px}
+}
+@media(max-width:900px){
+  .hamburger{display:flex}
+  .header .btn{display:none}
+  .nav{position:fixed;top:0;right:0;bottom:0;width:min(330px,84vw);background:rgba(13,10,7,.97);backdrop-filter:blur(18px);border-left:1px solid var(--border);transform:translateX(105%);transition:transform .4s cubic-bezier(.16,1,.3,1);display:flex;align-items:center;justify-content:center;z-index:101}
+  .nav.open{transform:none}
+  .nav ul{flex-direction:column;text-align:center;gap:28px}
+  .nav a{font-size:1rem}
+  .hero{padding-top:130px}
+  .hero__inner{grid-template-columns:1fr;text-align:center}
+  .hero__logo{margin-inline:auto}
+  .hero__tagline{margin-inline:auto}
+  .hero__actions,.hero__facts{justify-content:center}
+  .hero__photo{margin-top:14px}
+  .pro__grid{grid-template-columns:1fr}
+  .sec-head--left{text-align:center;margin-inline:auto}
+  .sec-head--left .tag::after{content:"";width:36px;height:1px;background:var(--gold)}
+  .creds{max-width:520px;margin-inline:auto}
+  .pro__actions{justify-content:center}
+  .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:200px}
+  .gallery__item:first-child,.gallery__item:nth-child(2){grid-column:auto;grid-row:auto}
+  .footer__inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  .section{padding:72px 0}
+  .location{padding:90px 0}
+  .banner img{height:230px}
+  .gallery{grid-template-columns:1fr;grid-auto-rows:240px}
+  .gallery__item:first-child,.gallery__item:nth-child(2){grid-column:auto;grid-row:auto}
+  .footer__inner{grid-template-columns:1fr;text-align:center;gap:36px}
+  .footer__brand img{margin-inline:auto}
+  .footer__slogan{margin-inline:auto}
+  .soc{justify-content:center}
+  .footer__bottom .container{justify-content:center;text-align:center}
+  .hero__scroll{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#home" class="brand" aria-label="Barba Negra — Início">
+      <img src="logo%20realista.png" alt="Logo Barba Negra">
+      <span class="brand__name">Barba <span>Negra</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="#home" class="active">Início</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#profissional">Profissional</a></li>
+        <li><a href="#espaco">Espaço</a></li>
+        <li><a href="#localizacao">Localização</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="header__actions">
+      <a href="https://wa.me/554791768615" target="_blank" rel="noopener" class="btn btn--gold btn--sm">
+        <i class="fab fa-whatsapp"></i> Agendar
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero__bg" aria-hidden="true">
+    <img src="Tela%20inicial%20de%20fundo.jpg" alt="">
+  </div>
+  <div class="hero__overlay"></div>
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <img src="logo%20realista.png" alt="Logo realista da Barbearia Barba Negra" class="hero__logo">
+      <p class="hero__eyebrow">Barbearia</p>
+      <h1>Barba <span>Negra</span></h1>
+      <p class="hero__tagline">Onde o estilo encontra a tradição. Cortes, barba e sobrancelha com técnica, dedicação e atendimento de verdade — em Joinville e região.</p>
+      <div class="hero__actions">
+        <a href="https://wa.me/554791768615" target="_blank" rel="noopener" class="btn btn--gold">
+          <i class="fab fa-whatsapp"></i> Agende seu horário
+        </a>
+        <a href="#servicos" class="btn btn--outline">
+          Conheça os serviços <i class="fas fa-arrow-down"></i>
+        </a>
+      </div>
+      <ul class="hero__facts">
+        <li><i class="fas fa-scissors"></i> Mais de 3 anos de experiência</li>
+        <li><i class="fas fa-graduation-cap"></i> Formado em Educação Física</li>
+        <li><i class="fas fa-map-marker-alt"></i> Pirabeiraba e região</li>
+      </ul>
+    </div>
+    <div class="hero__photo reveal">
+      <div class="frame">
+        <img src="profissional.png" alt="Foto do profissional da Barba Negra">
+      </div>
+      <div class="float-badge"><i class="fas fa-star"></i> 3+ anos de barbeiro</div>
+    </div>
+  </div>
+  <a href="#servicos" class="hero__scroll" aria-label="Rolar para serviços">
+    <span>Explore</span>
+    <i class="fas fa-chevron-down"></i>
+  </a>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>CORTE CLÁSSICO</span><span>BARBA COMPLETA</span><span>SOBRANCELHA</span><span>MÁSCARA FACIAL</span><span>ATENDIMENTO PERSONALIZADO</span>
+    <span>CORTE CLÁSSICO</span><span>BARBA COMPLETA</span><span>SOBRANCELHA</span><span>MÁSCARA FACIAL</span><span>ATENDIMENTO PERSONALIZADO</span>
+  </div>
+</div>
+
+<!-- SERVIÇOS -->
+<section class="section services" id="servicos">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Serviços</span>
+      <h2>Tradição e estilo <span>em cada corte</span></h2>
+      <p>Do clássico ao contemporâneo, uma experiência completa de barbearia.</p>
+    </div>
+
+    <div class="banner reveal">
+      <img src="apresenta%C3%A7%C3%A3o%20servi%C3%A7os.png" alt="Apresentação dos serviços da Barba Negra">
+      <div class="banner__content">
+        <h3>Excelência em cada detalhe</h3>
+        <p>Mais de 3 anos transformando visuais</p>
+      </div>
+    </div>
+
+    <div class="services__grid">
+      <article class="card reveal">
+        <div class="card__img">
+          <img src="cortando%20cabelo.png" alt="Profissional fazendo um corte de cabelo" loading="lazy">
+        </div>
+        <div class="card__body">
+          <h3>Corte Clássico</h3>
+          <p>Corte tradicional com tesoura e máquina, finalização caprichada.</p>
+          <div class="card__foot">
+            <span class="price"><small>Valor</small>R$ 45</span>
+            <i class="fas fa-scissors"></i>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal" data-delay="1">
+        <div class="card__img">
+          <img src="fazendo%20a%20barba.png" alt="Profissional fazendo a barba de um cliente" loading="lazy">
+        </div>
+        <div class="card__body">
+          <h3>Barba Completa</h3>
+          <p>Aparação, hidratação e modelagem da barba com navalha.</p>
+          <div class="card__foot">
+            <span class="price"><small>Valor</small>R$ 40</span>
+            <i class="fas fa-cut"></i>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal" data-delay="2">
+        <div class="card__img">
+          <img src="fazendo%20a%20sombrancelha.png" alt="Profissional fazendo a sobrancelha de um cliente" loading="lazy">
+        </div>
+        <div class="card__body">
+          <h3>Sobrancelha</h3>
+          <p>Modelagem completa de sobrancelha, realçando sua expressão.</p>
+          <div class="card__foot">
+            <span class="price"><small>Valor</small>R$ 25</span>
+            <i class="fas fa-eye"></i>
+          </div>
+        </div>
+      </article>
+
+      <article class="card reveal" data-delay="3">
+        <div class="card__img">
+          <img src="mascara%20no%20rosto.png" alt="Cliente com máscara facial no rosto" loading="lazy">
+        </div>
+        <div class="card__body">
+          <h3>Máscara Facial</h3>
+          <p>Tratamento revitalizante para a pele com máscara premium.</p>
+          <div class="card__foot">
+            <span class="price"><small>Valor</small>R$ 50</span>
+            <i class="fas fa-spa"></i>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROFISSIONAL -->
+<section class="section pro" id="profissional">
+  <div class="container">
+    <div class="pro__grid">
+      <div class="pro__photo reveal">
+        <div class="frame">
+          <img src="profissional.png" alt="Foto do barbeiro da Barba Negra">
+        </div>
+      </div>
+      <div>
+        <div class="sec-head sec-head--left reveal" style="margin-bottom:22px">
+          <span class="tag">O Profissional</span>
+          <h2>Seu visual em <span>boas mãos</span></h2>
+        </div>
+        <p class="reveal" style="color:var(--muted)">
+          Barbeiro há mais de 3 anos, com formação cursada na área e graduado em Educação Física.
+          Conhecido em Pirabeiraba e região, leva o trabalho como hobby — unindo técnica,
+          dedicação e paixão pelo que faz em cada atendimento.
+        </p>
+        <div class="creds reveal" data-delay="1">
+          <div class="cred">
+            <i class="fas fa-scissors"></i>
+            <div><b>Barbeiro há mais de 3 anos</b><small>Experiência em corte, barba e acabamento</small></div>
+          </div>
+          <div class="cred">
+            <i class="fas fa-certificate"></i>
+            <div><b>Cursado na área de barbearia</b><small>Preparação técnica na área</small></div>
+          </div>
+          <div class="cred">
+            <i class="fas fa-graduation-cap"></i>
+            <div><b>Formado em Educação Física</b><small>Formação superior completa</small></div>
+          </div>
+          <div class="cred">
+            <i class="fas fa-map-marker-alt"></i>
+            <div><b>Conhecido em Pirabeiraba e região</b><small>Confiança construída no dia a dia</small></div>
+          </div>
+        </div>
+        <div class="pro__actions reveal" data-delay="2">
+          <a href="https://wa.me/554791768615" target="_blank" rel="noopener" class="btn btn--gold btn--sm">
+            <i class="fab fa-whatsapp"></i> Fale comigo
+          </a>
+          <a href="https://instagram.com/barbearia_barbanegra_ln" target="_blank" rel="noopener" class="btn btn--outline btn--sm">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPAÇO -->
+<section class="section" id="espaco">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Galeria</span>
+      <h2>Nosso <span>espaço</span></h2>
+      <p>Um ambiente pensado para o seu conforto e bem-estar.</p>
+    </div>
+    <div class="gallery reveal">
+      <figure class="gallery__item">
+        <img src="logo%20branca.png" alt="Logo branca da Barba Negra" class="gallery__logo" loading="lazy">
+        <figcaption class="gallery__caption">Barba Negra</figcaption>
+      </figure>
+      <figure class="gallery__item">
+        <img src="instagram%20atendimento.jpg" alt="Atendimento na Barba Negra" loading="lazy">
+        <figcaption class="gallery__caption">Atendimento</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="location" id="localizacao">
+  <div class="location__bg" aria-hidden="true">
+    <img src="localiza%C3%A7%C3%A3o.png" alt="" loading="lazy">
+  </div>
+  <div class="location__overlay"></div>
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Onde estamos</span>
+      <h2>Localização</h2>
+      <p>Venho nos visitar ou fale conosco para agendar.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="loc-card reveal">
+        <div class="loc-card__icon"><i class="fas fa-map-pin"></i></div>
+        <h3>Endereço</h3>
+        <p>Rua XV de Outubro, 180<br>Rio Bonito — Joinville, SC<br>CEP 89239-700</p>
+        <div class="addr-actions">
+          <a class="chip" href="https://maps.google.com/?q=Rua+XV+de+Outubro+180+Rio+Bonito+Joinville+SC+89239-700" target="_blank" rel="noopener">
+            <i class="fas fa-location-arrow"></i> Ver no Maps
+          </a>
+          <button class="chip" type="button" onclick="copyAddress(this)" aria-label="Copiar endereço">
+            <i class="far fa-copy"></i> Copiar endereço
+          </button>
+        </div>
+      </div>
+      <div class="loc-card reveal" data-delay="1">
+        <div class="loc-card__icon"><i class="fas fa-clock"></i></div>
+        <h3>Horários</h3>
+        <p>Segunda a sábado<br>Mediante agendamento</p>
+      </div>
+      <div class="loc-card reveal" data-delay="2">
+        <div class="loc-card__icon"><i class="fab fa-whatsapp"></i></div>
+        <h3>Telefone</h3>
+        <p>(47) 91768-8615</p>
+        <div class="addr-actions">
+          <a class="chip" href="tel:554791768615"><i class="fas fa-phone-alt"></i> Ligar agora</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="section contact" id="contato">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="tag">Contato</span>
+      <h2>Fale <span>conosco</span></h2>
+      <p>Agende seu horário ou tire suas dúvidas pelo WhatsApp ou Instagram.</p>
+    </div>
+    <div class="contact__grid">
+      <a href="https://wa.me/554791768615" target="_blank" rel="noopener" class="contact-card contact-card--wa reveal">
+        <i class="fab fa-whatsapp"></i>
+        <div>
+          <h4>WhatsApp</h4>
+          <p>(47) 91768-8615</p>
+          <span>Fale conosco &rarr;</span>
+        </div>
+      </a>
+      <a href="https://instagram.com/barbearia_barbanegra_ln" target="_blank" rel="noopener" class="contact-card contact-card--ig reveal" data-delay="1">
+        <i class="fab fa-instagram"></i>
+        <div>
+          <h4>Instagram</h4>
+          <p>@barbearia_barbanegra_ln</p>
+          <span>Siga-nos &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container reveal">
+    <h2>Pronto para transformar <span>seu visual</span>?</h2>
+    <p>Agende agora seu horário pelo WhatsApp — atendimento mediante agendamento.</p>
+    <div class="cta__actions">
+      <a href="https://wa.me/554791768615" target="_blank" rel="noopener" class="btn btn--gold">
+        <i class="fab fa-whatsapp"></i> Agende pelo WhatsApp
+      </a>
+      <a href="#localizacao" class="btn btn--outline">
+        <i class="fas fa-map-pin"></i> Como chegar
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer__bg" aria-hidden="true">
+    <img src="rodape.png" alt="" loading="lazy">
+  </div>
+  <div class="footer__overlay"></div>
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img src="logo%20realista.png" alt="Logo Barba Negra" loading="lazy">
+      <p class="footer__slogan">Onde o estilo encontra a tradição.</p>
+      <div class="soc">
+        <a href="https://wa.me/554791768615" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/barbearia_barbanegra_ln" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="#home">Início</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#profissional">Profissional</a></li>
+        <li><a href="#espaco">Espaço</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Horários</h4>
+      <ul>
+        <li>Segunda a sábado</li>
+        <li>Mediante agendamento</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="https://wa.me/554791768615" target="_blank" rel="noopener">WhatsApp: (47) 91768-8615</a></li>
+        <li><a href="https://instagram.com/barbearia_barbanegra_ln" target="_blank" rel="noopener">Instagram: @barbearia_barbanegra_ln</a></li>
+        <li>Rua XV de Outubro, 180 — Rio Bonito, Joinville - SC</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <p>&copy; 2026 <strong>Barba Negra</strong>. Todos os direitos reservados.</p>
+      <p>Joinville — Santa Catarina</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATS -->
+<a href="https://wa.me/554791768615" target="_blank" rel="noopener" class="wa-float" id="waFloat" aria-label="Falar pelo WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<a href="#home" class="to-top" id="toTop" aria-label="Voltar ao topo">
+  <i class="fas fa-chevron-up"></i>
+</a>
+
+<script>
+(function(){
+  var header=document.getElementById('header');
+  var burger=document.getElementById('hamburger');
+  var nav=document.getElementById('nav');
+  var toTop=document.getElementById('toTop');
+
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    burger.classList.toggle('active',open);
+    burger.setAttribute('aria-expanded',open?'true':'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){
+      nav.classList.remove('open');
+      burger.classList.remove('active');
+      burger.setAttribute('aria-expanded','false');
+    });
+  });
+
+  window.addEventListener('scroll',function(){
+    header.classList.toggle('scrolled',window.scrollY>40);
+    toTop.classList.toggle('show',window.scrollY>650);
+  },{passive:true});
+
+  var links=document.querySelectorAll('.nav a');
+  var secs=document.querySelectorAll('section[id]');
+  var secObserver=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        links.forEach(function(l){
+          l.classList.toggle('active',l.getAttribute('href')==='#'+entry.target.id);
+        });
+      }
+    });
+  },{rootMargin:'-40% 0px -55% 0px'});
+  secs.forEach(function(s){secObserver.observe(s)});
+
+  var revealObserver=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){revealObserver.observe(el)});
+})();
+
+function copyAddress(btn){
+  var addr='Rua XV de Outubro, 180 - Rio Bonito, Joinville - SC, 89239-700';
+  function done(){
+    if(btn.dataset.busy)return;
+    btn.dataset.busy='1';
+    var orig=btn.innerHTML;
+    btn.classList.add('copied');
+    btn.innerHTML='<i class="fas fa-check"></i> Copiado!';
+    setTimeout(function(){
+      btn.innerHTML=orig;
+      btn.classList.remove('copied');
+      delete btn.dataset.busy;
+    },2200);
+  }
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(addr).then(done).catch(function(){fallback()});
+  }else{fallback()}
+  function fallback(){
+    var ta=document.createElement('textarea');
+    ta.value=addr;
+    ta.style.position='fixed';ta.style.opacity='0';
+    document.body.appendChild(ta);
+    ta.select();
+    try{document.execCommand('copy')}catch(e){}
+    document.body.removeChild(ta);
+    done();
+  }
+}
+</script>
+</body>
+</html>
